@@ -1,7 +1,7 @@
 import axios from "axios";
 import Auth from "../services/Auth";
 
-const production  = 'https://young-garden-72293.herokuapp.com';
+const production  = 'https://my-heroku-app-url-goes-here.com'; // Change this to your app
 const development = 'http://localhost:8080';
 const BASE_URL = (process.env.NODE_ENV ? production : development);
 
