@@ -1,53 +1,68 @@
-# SDA starter template
+# Demonstration of Heroku Deployment
 
-This web starter template is based on Spring, PostgreSQL, React, React router and Axios. Check the following links for documentation and guides:
+Using the mini group project template to showcase deployment with heroku.
 
-- [Spring](https://spring.io/projects/spring-boot)
-- [PostgreSQL](https://www.postgresql.org)
-- [React](https://reactjs.org)
-- [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
-- [Axios](https://github.com/axios/axios)
+**IMPORTANT:** Don't forget to set your backend app's URL in [`frontend/src/api/Api.js`](frontend/src/api/Api.js#L4).
 
-## Setup
-Our development environment for a full-stack web application will consist of three main parts:
+## Quick start
 
-1. Database (Postgres).
-2. Backend server (Spring).
-3. Frontend development server (React).
+### Spring Backend Application
+Assuming you have created a Heroku account, have installed Heroku CLI installed and you are logged in with `heroku login`
+ command, in the root folder run
 
-### Prerequisites
-- `docker` and `docker-compose`.
-- `nodejs`.
-
-### Starting the database
-In the root folder, run
-```
-docker-compose up
+```bash
+heroku create
 ```
 
-### Starting the backend server
-Open the root folder and run
-```
-./gradlew bootRun
+Add the database addon
+
+```bash
+heroku addons:create heroku-postgresql
 ```
 
-### Starting the frontend development server
-The frontend application is in the directory `frontend`. From there, run 
-```
-npm install
-```
-to install all the dependencies needed for the project.
+Push the project to the Heroku repo to start the application build
 
-Then start the frontend application by running
+```bash
+git push heroku master
 ```
-npm start
+**Note:** _If `master` doesn't work, try `main`._
+
+When the build is done, you can visit the app with
+
+```bash
+heroku open
 ```
 
-### Inviting collaborators
-The following should be done by one person in each group.
+Make not of the backend app url, which will be needed in the frontend setup.
 
-Now that you have a repo, you can start inviting your group members as collaborators so that they can work
-with you on your repo. Go to `Settings` -> `Manage Access` and then add your group members via their usernames.
+### React Frontend Application
 
-### Task
-You will find your task in [`Task.md`](Task.md)
+Set your backend's app URL in [`frontend/src/api/Api.js`](frontend/src/api/Api.js#L4).
+
+Navigate to `frontend` folder and create a git repo and commit
+```bash
+git init .
+git add .
+git commit -m "Initial commit"
+```
+
+Create the application for frontend on Heroku
+
+```bash
+heroku create
+```
+
+Push the project to the Heroku repo to start the frontend application build
+
+```bash
+git push heroku master
+```
+**Note:** _If `master` doesn't work, try `main`._
+
+When the build is done, you can visit the frontend app with
+
+```bash
+heroku open
+```
+
+Have fun!
