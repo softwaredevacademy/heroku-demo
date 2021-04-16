@@ -1,7 +1,13 @@
 package se.kth.sda.skeleton.posts;
 
-// @TODO add Hibernate annotations
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Post {
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String body;
