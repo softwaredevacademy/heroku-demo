@@ -26,7 +26,7 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public ResponseEntity<List<Post>> createPost() {
+    public ResponseEntity<List<Post>> listAllPosts() {
         return ResponseEntity
                 .ok(postRepository.findAll());
     }
